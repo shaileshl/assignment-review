@@ -52,7 +52,7 @@ export default class accountselector extends LightningElement {
     }
 
     closeModal() {
-        // to close modal set isModalOpen tarck value as false
+        
         this.profilepicurl = null;
         this.accountrecord = null;
     }
