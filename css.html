@@ -1,0 +1,98 @@
+<html>
+
+<head>
+
+	<style type="text/css">
+		/* Add styles here */
+
+		body {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+
+		#bodyWrapper {
+			margin: auto;
+			max-width: 1024px;
+		}
+
+		.btn {
+			background-color: lightgray;
+			padding: 4px 6px;
+			border: 2px solid darkgray;
+			border-radius: 8px;
+		}
+
+		.btn:hover {
+			background-color: darkgray;
+			border: 2px solid gray;
+		}
+
+		.btn:active {
+			background-color: gray;
+			border: 2px solid black;
+		}
+
+		.accountList div {
+			color: green;
+			border-radius: 4px;
+			box-shadow: 0px 0px 4px rgba(0, 0, 0, .5);
+			outline-width: 5px;
+		}
+
+		.accountList div:not(:last-child) {
+			margin-bottom: 10px;
+		}
+
+		.accountList .alert {
+			background-color: red;
+		}
+
+		.alert {
+			background-color: orange;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- Give the entire document some nicer font -->
+
+	<div id="bodyWrapper">
+		This div should align in the center of the page and never be wider than 1024px
+
+		<span class="btn">
+			Click me!
+			<!--
+				This should be grey with rounded corders
+				It should have some nice spacing between the text and the outside of the button
+				On mouse hover it should be slightly darker grey
+				When depressed or clicked it should be very dark grey but font should still be readable
+				For each state, the border should be a slightly darker color than the background
+				-->
+		</span>
+
+		<br />
+		<br />
+
+		<div class="accountList">
+			<!-- Default color of all these divs should be some shade of green, do not add any additional class names -->
+			<!-- Each div should also have a nice soft drop shadow and adequate spacing between each item to show this shadow -->
+			<div>Acme</div>
+			<div class="alert">Widgets Inc.
+				<!--background should be red, do not change the class name from 'alert'-->
+			</div>
+			<div>Gears and Bearings</div>
+			<div>Computer City</div>
+		</div>
+
+		<br />
+		<br />
+
+		<div class="alert">
+			<!--background should be orange, do not change the class name from 'alert'-->
+			Uh oh, something broke
+		</div>
+
+	</div>
+</body>
+
+</html>

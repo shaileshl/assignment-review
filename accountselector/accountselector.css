@@ -1,0 +1,15 @@
+.demo-only{
+    background-color: white;
+    
+    color: coral;
+
+}
+
+.Header-style{
+
+    font-size: larger;
+    border: 10ch;
+    align-self: center;
+    font-size: 1rem;
+    color: coral;
+}

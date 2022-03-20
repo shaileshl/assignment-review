@@ -1,0 +1,81 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="Header-style" title="Account Id">Select Account</div>
+    <template if:true={account}>
+        <lightning-datatable key-field="Id" data={account} onrowselection={handleRowSelection} columns={columns}
+            max-row-selection=1>
+        </lightning-datatable>
+    </template>
+    <button class="slds-button slds-button_brand" onclick={openModal} title="Next">Next</button>
+    <div if:true={showLoadingSpinner}>
+        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+    </div>
+    <template if:true={accountrecord}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                        Selected Account Record
+                    </h2>
+                </header>
+
+                <div class="demo-only">
+                    <article class="slds-tile slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
+                                <img alt="" src={profilepicurl} />
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-tile__detail">
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">
+                                        Account Id:</dt>
+                                    <dd class="slds-item_detail slds-truncate" title="Description for first label">
+                                        {accountrecord.Id}</dd>
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">
+                                        Account Name:</dt>
+                                    <dd class="slds-item_detail slds-truncate" title="Description for second label">
+                                        {accountrecord.Name}</dd>
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">
+                                        Owner Name:</dt>
+                                    <dd class="slds-item_detail slds-truncate" title="Description for second label">
+                                        {accountrecord.Owner.Name}</dd>   
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">
+                                        Industry:</dt>
+                                    <dd class="slds-item_detail slds-truncate" title="Description for second label">
+                                        {accountrecord.Industry}</dd>
+                                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">
+                                        Type:</dt>
+                                    <dd class="slds-item_detail slds-truncate" title="Description for second label">
+                                        {accountrecord.Type}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!--
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p>{accountrecord.Id}</p>
+                    <p>{accountrecord.Name}</p>
+                    <p>{accountrecord.Industry}</p>
+                    <p>{accountrecord.Type}</p>
+                    <img src={profilepicurl} alt="" />
+                    <p>{accountrecord.Owner.Name}</p>
+
+                </div>
+            -->
+
+                <footer class="slds-modal__footer">
+                    <div class="slds-grid slds-grid_align-center">
+                        <button class="slds-button slds-button_brand" onclick={closeModal} title="Back">Back</button>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>
+</template>

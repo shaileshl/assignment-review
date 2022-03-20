@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+      // Do not use jQuery or any other libraries for these JavaScript questions.
+
+      // Q1) Complete this function that receives an array of numbers and returns the sum of the values in the array.
+      function sumNumberArray(numArray) {
+        return numArray.reduce((partialSum, a) => partialSum + a, 0);
+      }
+
+      //The following questions below will use this array of Contact objects
+      var contacts = [
+        { account: "Acme", firstName: "John", lastName: "Snow" },
+        { account: "Metal Industries", firstName: "Ted", lastName: "Smith" },
+        { account: "Acme", firstName: "Sara", lastName: "Butler" },
+        { account: "HiTech Corp", firstName: "Sam", lastName: "Johnson" },
+        { account: "HiTech Corp", firstName: "Arnold", lastName: "Williams" },
+        {
+          account: "Metal Industries",
+          firstName: "Jessica",
+          lastName: "Westcoat",
+        },
+        { account: "Acme", firstName: "Kyle", lastName: "Johnson" },
+        { account: "HiTech Corp", firstName: "Jason", lastName: "Fernandez" },
+      ];
+
+      //Given the code below.....
+      var contact = contacts[0];
+      contact.firstName = "Scott";
+
+      // Q2 ) What is the value of contacts[0].firstName? Why?
+      // The result is going to be Scott.
+      // The object is stored in contacts as references. contacts[0] gives the reference to the object.
+      // So, when the contact.firstName is changed, it changes the value of firstName in the contacts[0]
+      // object reference.
+
+      //Similarly, given the following array of numbers
+      var numberArray = [3, 44, 64];
+      var num = numberArray[0];
+      num = 13;
+
+      // Q3) What will be the value of numberArray[0]? Why?
+      // The value will be 3.
+      // 1. The primitive types are passed by value in JS. Integer is also a primitive type.
+      //    So, changing num doesn't change the value of numberArray[0].
+      // 2. num = 13 is overwriting the value stored in the num variable and not changing the value itself.
+
+      // Q4) Complete the convertAccountArrayToObject() function below that accepts an array like 'contacts' above and
+      // returns an object with the following object structure below where the key is account name and value is an array of alphabetized full names
+      var acctContactObject = {
+        Acme: ["John Snow", "Kyle Johnson", "Sara Butler"],
+        "HiTech Corp": ["Arnold Williams", "Jason Fernandez", "Sam Johnson"],
+        "Metal Industries": ["Jessica Westcoat", "Ted Smith"],
+      };
+
+      function convertAccountArrayToObject(contacts) {
+        //Return an object structured like the 'acctContactObject' object above
+        var result = [];
+        for (const [key, value] of Object.entries(contacts)) {
+          for (const name of value) {
+            // Take only the first 2 parts of the name.
+            let [first, last] = name.split(" ");
+            result.push({ account: key, firstName: first, lastName: last });
+          }
+        }
+        return result;
+      }
+
+      // Q5) See the question in the call back function
+      function getContacts() {
+        var accountId = "123abc";
+
+        $.get("ajax/contacts.json?id=" + accountId, function (data) {
+          //This is an asynchronous callback function
+          //This is inside an anonymous function executing asynchronously in a seperate context but it still has the ability to read the value
+          // in the 'accountId' var. Why?
+          console.log("I see you " + accountId);
+        });
+      }
+      // This has to do with closures. An inner function has access to the outer function scope and variables
+      // defined in that scope through the closure. This way, when ever the inner function is executed,
+      // it can invoke the outer funciton variables.
+
+      // Q6) What is the difference between the == operator and the === operator? Give an example of why may use one instead of the other.
+      // == checks the values. === also checks the datatypes before checking the values.
+      // 0 == false and false == '' (both these will return true)
+      // 0 === false and false === '' (both these will return false)
+
+      // Q7) What will the output of the following function be? You can easily run this function and see the output but also explain why?
+      function doTimeouts() {
+        console.log(1);
+        setTimeout(function () {
+          console.log(2);
+        }, 1000);
+        setTimeout(function () {
+          console.log(3);
+        }, 0);
+        console.log(4);
+      }
+      // The output will be in the order: 1 4 3 2.
+      // In the order of execution, 1 will be printed first. 2 will be printed after a second because of setTimeout. setTimeout will
+      // call the function given to it asynchronously ASAP after the given time. Even if the time is 0 seconds, the funciton isn't run
+      // immediately, it takes non-zero time (roughly 10 milliseconds) to run the function. In the mean time, 4 will be printed.
+      // And then, 3 and at last 2.
+
+      // Q8) JavaScript includes basic string functions like toLowerCase() and toUpperCase(). JavaScript provides a mechanism to attach
+      // custom methods to core objects like String. Do what is necessary to make the commented line below work and output the reversed
+      // value of the 'productName' var.
+
+      var productName = "Smartsheet";
+      String.prototype.reverse = function() {
+        return productName.split("").reverse().join("");
+      };
+      console.log(productName.reverse());
+
+    </script>
+  </head>
+  <body>
+    <p>
+      View the source code of this page and answer the questions/complete the
+      code.
+    </p>
+  </body>
+</html>
