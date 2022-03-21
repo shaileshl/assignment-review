@@ -23,7 +23,7 @@ Classes:
 
 - Executed the required using Trigger Handler model.
 - Since the update is on Contact and in a before event, no need to use DML. 
-- Created a TestDataFactory for the test class 
+- Created a TestDataFactory for the test class with 100% code coverage
 
 
 
