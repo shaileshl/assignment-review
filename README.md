@@ -13,10 +13,11 @@ Database Design
 Salesforce Development: Provided all the lohin details in an email
 Part 1 : Trigger
 
-Classes: ContactTrigger : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01q8c000002dkAq
-         ContactIndustryUpdate : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01p8c00000LNd4c
-         ContactTrigger_Test : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01p8c00000LNdZ3
-         TestDataFactory :   https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01p8c00000LNdZ8
+Classes: 
+-ContactTrigger : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01q8c000002dkAq
+-ContactIndustryUpdate : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01p8c00000LNd4c
+-ContactTrigger_Test : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01p8c00000LNdZ3
+-TestDataFactory :   https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01p8c00000LNdZ8
 
 - Executed the required using Trigger Handler model.
 - Since the update is on Contact and in a before event, no need to use DML. 
