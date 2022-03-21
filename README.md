@@ -15,6 +15,8 @@ Salesforce Development: Provided all the login details in an email
 
 Part 1 : Trigger
 
+- Test record : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/0038c00002hIoBy
+
 Classes: 
 - ContactTrigger : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01q8c000002dkAq
 - ContactIndustryUpdate : https://affirminterview-shaileshlak-dev-ed.my.salesforce.com/01p8c00000LNd4c
