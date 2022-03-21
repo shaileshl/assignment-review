@@ -10,7 +10,9 @@ Database Design
 - Attached the database.html file with answers inline.
 
 
-Salesforce Development: Provided all the lohin details in an email
+Salesforce Development: Provided all the login details in an email
+
+
 Part 1 : Trigger
 
 Classes: 
